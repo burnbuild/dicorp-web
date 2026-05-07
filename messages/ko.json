@@ -250,7 +250,7 @@
       },
       {
         "heading": "2. 수집할 수 있는 정보",
-        "body": "(가) Vercel Analytics를 통한 익명 통계 — 방문 경로, 접속 국가, 기기 유형 등이며, 개인을 식별할 수 있는 정보는 포함되지 않습니다. (나) manager@dicorporations.com 으로 보내주신 이메일 — 회신 목적으로만 사용됩니다."
+        "body": "(가) Cloudflare를 통한 익명 요청 로그 — IP 기반 접속 국가, 기기 유형, 방문 경로 등이며, 개인을 식별할 수 있는 정보는 보관되지 않습니다. (나) manager@dicorporations.com 으로 보내주신 이메일 — 회신 목적으로만 사용됩니다."
       },
       {
         "heading": "3. 쿠키",

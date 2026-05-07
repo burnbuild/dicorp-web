@@ -250,7 +250,7 @@
       },
       {
         "heading": "2. Data we may collect",
-        "body": "(a) Anonymized analytics through Vercel Analytics — page paths, country, device type, no personal identifiers. (b) Email correspondence you send to manager@dicorporations.com — used only to reply to you."
+        "body": "(a) Anonymized request logs through Cloudflare — IP-derived country, device type, page paths, with no personal identifiers retained. (b) Email correspondence you send to manager@dicorporations.com — used only to reply to you."
       },
       {
         "heading": "3. Cookies",

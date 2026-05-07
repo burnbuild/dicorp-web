@@ -12,7 +12,7 @@
 # production
 # testing
 # typescript
-# vercel
+# cloudflare
 *.pem
 *.tsbuildinfo
 .DS_Store
@@ -21,7 +21,6 @@
 .pnp.*
 .pnpm-debug.log*
 .superpowers/
-.vercel
 .open-next/
 .wrangler/
 .dev.vars

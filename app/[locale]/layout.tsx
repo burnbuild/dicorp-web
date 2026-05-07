@@ -2,7 +2,6 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
-import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { routing, type Locale } from "@/i18n/routing";
 import { Header } from "@/components/header";
@@ -71,7 +70,6 @@ export default async function LocaleLayout({
           <Header locale={locale as Locale} />
           <main className="flex flex-1 flex-col">{children}</main>
           <Footer locale={locale as Locale} />
-          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
