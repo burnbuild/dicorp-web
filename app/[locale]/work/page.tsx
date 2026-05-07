@@ -1,7 +1,9 @@
-import { useTranslations } from "next-intl";
+import { useTranslations, useMessages } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { ProjectCard } from "@/components/work/project-card";
+
+type Highlight = { title: string; body: string };
 
 export async function generateMetadata({
   params,
@@ -32,8 +34,14 @@ export default async function WorkPage({
 
 function WorkContent() {
   const t = useTranslations("work");
+  const messages = useMessages() as {
+    work: { burnbuild: { highlights: Highlight[] } };
+  };
+  const highlights = messages.work.burnbuild.highlights;
+
   return (
     <>
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0 -z-10"
@@ -63,6 +71,19 @@ function WorkContent() {
         </div>
       </section>
 
+      {/* Approach */}
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-teal-light)]">
+        <div className="mx-auto max-w-[1080px] px-6 py-20 md:px-8 md:py-28">
+          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+            {t("approachHeading")}
+          </h2>
+          <p className="mt-8 max-w-[60ch] text-xl leading-relaxed md:text-[1.4rem] md:leading-[1.55]">
+            {t("approachBody")}
+          </p>
+        </div>
+      </section>
+
+      {/* BurnBuild card + highlights */}
       <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-lime)]">
         <div className="mx-auto max-w-[1080px] px-6 py-20 md:px-8 md:py-28">
           <ProjectCard
@@ -72,15 +93,40 @@ function WorkContent() {
             status={t("burnbuild.status")}
             platforms={t("burnbuild.platforms")}
           />
+
+          <div className="mt-16">
+            <h3 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+              {t("burnbuild.highlightsHeading")}
+            </h3>
+            <div className="mt-10 grid gap-6 md:grid-cols-3 md:gap-8">
+              {highlights.map((h, i) => (
+                <article
+                  key={h.title}
+                  className="rounded-2xl border border-[var(--color-border)] bg-white p-7"
+                >
+                  <span className="text-xs font-mono text-[var(--color-fg-muted)]">
+                    0{i + 1}
+                  </span>
+                  <h4 className="mt-4 text-lg font-semibold tracking-tight">
+                    {h.title}
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-fg-muted)]">
+                    {h.body}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* Future slot */}
       <section className="border-t border-[var(--color-border)] bg-white">
         <div className="mx-auto max-w-[1080px] px-6 py-20 md:px-8 md:py-28">
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("futureSlot.label")}
           </p>
-          <p className="mt-6 max-w-[60ch] text-lg text-[var(--color-fg-muted)]">
+          <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-[var(--color-fg-muted)]">
             {t("futureSlot.body")}
           </p>
         </div>

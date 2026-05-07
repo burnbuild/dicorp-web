@@ -50,7 +50,7 @@ export function Hero({ locale }: { locale: Locale }) {
         <h1 className="mp-fade-up mp-fade-up-delay-1 mt-6 max-w-[18ch] text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.04] tracking-tight">
           {taglineRendered}
         </h1>
-        <p className="mp-fade-up mp-fade-up-delay-2 mt-6 max-w-[40ch] text-base text-[var(--color-fg-muted)] md:text-lg">
+        <p className="mp-fade-up mp-fade-up-delay-2 mt-7 max-w-[58ch] text-base leading-relaxed text-[var(--color-fg-muted)] md:text-lg md:leading-[1.65]">
           {t("subline")}
         </p>
         <Link

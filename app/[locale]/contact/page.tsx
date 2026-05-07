@@ -72,6 +72,17 @@ function ContactContent({ locale }: { locale: string }) {
         </div>
       </section>
 
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-teal-light)]">
+        <div className="mx-auto max-w-[1080px] px-6 py-20 md:px-8 md:py-28">
+          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+            {t("responseHeading")}
+          </h2>
+          <p className="mt-8 max-w-[55ch] text-xl leading-relaxed md:text-2xl">
+            {t("responseBody")}
+          </p>
+        </div>
+      </section>
+
       <section className="border-t border-[var(--color-border)] bg-white">
         <div className="mx-auto max-w-[1080px] px-6 py-20 md:px-8 md:py-28">
           <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">

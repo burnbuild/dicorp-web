@@ -5,35 +5,56 @@
     "contact": "Contact"
   },
   "footer": {
+    "tagline": "An independent digital studio. Built to last, quietly useful.",
     "businessNumberLabel": "Business Reg. No.",
     "addressLabel": "Address",
     "emailLabel": "Email",
     "foundedLabel": "Founded",
     "copyright": "© {year} Di Corporations. All rights reserved.",
     "privacy": "Privacy",
-    "terms": "Terms"
+    "terms": "Terms",
+    "navHeading": "Site",
+    "studioHeading": "Studio"
   },
   "home": {
     "hero": {
       "tagline": "Healthier days. Goals that stick.",
-      "subline": "An independent digital studio.",
+      "subline": "An independent digital studio building thoughtful apps that help people stay healthy and finish what they start.",
       "cta": "See our work"
     },
     "aboutSummary": {
       "label": "What we do",
-      "body": "Di Corporations builds digital products that help people focus on their health and reach the goals that matter to them.",
+      "body": "Di Corporations builds digital products that help people focus on their health and reach the goals that matter to them. We move slowly on purpose — each app is meant to live in your day for years, not weeks.",
       "cta": "Read more"
+    },
+    "principles": {
+      "label": "What we believe in",
+      "heading": "Three principles, repeated daily.",
+      "items": [
+        {
+          "title": "Health-first by design",
+          "body": "Health isn't a feature we add — it's the lens every product decision passes through. If a feature could nudge someone in a less healthy direction, it doesn't ship."
+        },
+        {
+          "title": "Built to last, not to ship",
+          "body": "Most apps are designed for the first week. We design for the third year. That means fewer features, slower releases, and stricter standards for what stays."
+        },
+        {
+          "title": "Quietly useful",
+          "body": "We build software that does its job and then gets out of the way. No streaks that punish you, no manipulative notifications, no dark patterns. Just tools that work."
+        }
+      ]
     },
     "workPreview": {
       "label": "Currently building",
       "title": "BurnBuild",
-      "description": "A fitness companion app. In development for iOS, Android, and the web.",
+      "description": "A fitness companion app for people who want to make exercise a daily habit, not a once-in-a-while sprint. In active development for iOS, Android, and the web.",
       "status": "In development",
       "cta": "View work"
     },
     "contactCta": {
       "title": "Working on something?",
-      "subline": "Reach out — we read every email.",
+      "subline": "Project inquiries, partnerships, or just want to chat — we read every email.",
       "button": "Email us"
     }
   },
@@ -41,12 +62,48 @@
     "title": "About",
     "lede": "Di Corporations is an independent digital studio building thoughtful apps for everyday life.",
     "missionHeading": "What we believe",
-    "missionBody": "We believe small, careful software can change the texture of someone's day. Our work focuses on health and the goals people set for themselves — the kind of goals that, kept day after day, change a life.",
+    "missionBody": "We believe small, careful software can change the texture of someone's day. Our work focuses on health and the goals people set for themselves — the kind of goals that, kept day after day, change a life. The web is full of software designed to capture attention. We are trying to build the opposite: software designed to give it back.",
+    "principlesHeading": "Principles",
+    "principles": [
+      {
+        "title": "Health-first by design",
+        "body": "We don't build engagement traps. We build tools whose success is measured by whether you live a slightly better day."
+      },
+      {
+        "title": "Built to last, not to ship",
+        "body": "We'd rather release one careful thing than ten clever ones. Software that survives three years has earned a place on a phone."
+      },
+      {
+        "title": "Quietly useful",
+        "body": "No streaks that punish you. No notifications begging for attention. Just tools that work the moment you open them, and disappear the moment you close them."
+      },
+      {
+        "title": "Independent on purpose",
+        "body": "We answer to the people who use our products, not to investors, ad networks, or growth dashboards. That independence is a feature."
+      }
+    ],
+    "approachHeading": "How we work",
+    "approachIntro": "We work slowly, deliberately, and in public. Three steps, repeated.",
+    "approach": [
+      {
+        "step": "01",
+        "title": "Listen",
+        "body": "Before any code, we watch how people actually live their day. The best products start with an honest look at what's already working — and what isn't — without us."
+      },
+      {
+        "step": "02",
+        "title": "Sketch",
+        "body": "Small prototypes, fast feedback. We build the smallest possible version of an idea and put it in front of real people before we commit."
+      },
+      {
+        "step": "03",
+        "title": "Ship — and keep shipping",
+        "body": "We release in small, deliberate steps. The product gets sharper with use, not louder. Quiet improvements, year after year."
+      }
+    ],
     "factsHeading": "The studio",
     "facts": {
       "founded": "Founded",
-      "team": "Team",
-      "teamValue": "1 (founder-only)",
       "based": "Based in",
       "basedValue": "Songdo, Incheon, South Korea",
       "registration": "Business Reg.",
@@ -57,26 +114,45 @@
   "work": {
     "title": "Work",
     "lede": "What we are building, in the open.",
+    "approachHeading": "How we approach building",
+    "approachBody": "We don't ship for a launch — we ship for the long shape of a product. That changes how we build. We design first for the third year of use, not the first week. We measure success by retention without manipulation. We release slowly because the small details we hold the line on are the ones our users won't notice until they've been with us for a while.",
     "burnbuild": {
       "name": "BurnBuild",
       "tagline": "A fitness companion app.",
-      "description": "BurnBuild is being built for people who want to make exercise a daily habit — not a once-in-a-while sprint. Cross-platform: iOS, Android, and the web. Currently in active development.",
+      "description": "BurnBuild is being built for people who want to make exercise a daily habit — not a once-in-a-while sprint. The app focuses on the small, repeatable rhythms that turn a workout into a life. Cross-platform: iOS, Android, and the web. Currently in active development.",
       "status": "In development",
-      "platforms": "iOS · Android · Web"
+      "platforms": "iOS · Android · Web",
+      "highlightsHeading": "What it does differently",
+      "highlights": [
+        {
+          "title": "Built around the daily, not the dramatic",
+          "body": "Most fitness apps celebrate big numbers. BurnBuild celebrates the second week — the part where habits actually form."
+        },
+        {
+          "title": "Designed for the long stretch",
+          "body": "No streaks that punish a sick day. No charts that shame a slow week. The app is meant to still be on your phone three years from now."
+        },
+        {
+          "title": "Quiet by default",
+          "body": "Minimal notifications. No social pressure. The app talks when you ask it to and rests when you don't."
+        }
+      ]
     },
     "futureSlot": {
       "label": "More projects in time.",
-      "body": "We move slowly on purpose. New work shows up here when it is ready."
+      "body": "We move slowly on purpose. New work shows up here when it is ready — not before. If you want to know when something does, the best signal is the email at the bottom of this page."
     }
   },
   "contact": {
     "title": "Contact",
     "lede": "We read every email.",
-    "body": "For project inquiries, partnerships, or anything else — please get in touch.",
+    "body": "For project inquiries, partnerships, press, or just to say hello — please get in touch. We answer in English or Korean.",
     "emailButton": "Email contact@dicorporations.com",
     "studioHeading": "Studio",
     "registrationLabel": "Business Reg.",
-    "addressLabel": "Address"
+    "addressLabel": "Address",
+    "responseHeading": "Response time",
+    "responseBody": "We aim to respond within two business days. Email is the fastest and most reliable way to reach us."
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -140,19 +216,19 @@
     "siteName": "Di Corporations",
     "home": {
       "title": "Di Corporations — Independent Digital Studio",
-      "description": "Di Corporations is an independent digital studio building thoughtful apps for everyday life."
+      "description": "Di Corporations is an independent digital studio building thoughtful apps for everyday life — focused on health, habits, and the goals that matter."
     },
     "about": {
       "title": "About — Di Corporations",
-      "description": "An independent digital studio based in Songdo, Incheon, building small, careful software focused on health and goals."
+      "description": "An independent digital studio based in Songdo, Incheon, building small, careful software focused on health and goals. Three principles, repeated daily."
     },
     "work": {
       "title": "Work — Di Corporations",
-      "description": "Currently building BurnBuild — a fitness companion app for iOS, Android, and web."
+      "description": "Currently building BurnBuild — a fitness companion app for iOS, Android, and the web, designed for the long stretch."
     },
     "contact": {
       "title": "Contact — Di Corporations",
-      "description": "Get in touch by email at contact@dicorporations.com."
+      "description": "Get in touch by email at contact@dicorporations.com. We answer in English or Korean within two business days."
     },
     "privacy": {
       "title": "Privacy Policy — Di Corporations",
