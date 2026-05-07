@@ -9,7 +9,7 @@ export function Footer({ locale }: { locale: Locale }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 border-t border-[var(--color-border)] bg-[var(--color-wash-lime-light)]">
+    <footer className="border-t border-[var(--color-border)] bg-[var(--color-wash-lime-light)]">
       <div className="mx-auto max-w-[1080px] px-6 pt-16 pb-10 md:px-8">
         <p className="max-w-[40ch] text-base leading-relaxed text-[var(--color-fg)]">
           {t("tagline")}
