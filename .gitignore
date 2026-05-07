@@ -22,6 +22,9 @@
 .pnpm-debug.log*
 .superpowers/
 .vercel
+.open-next/
+.wrangler/
+.dev.vars
 .yarn/*
 /.next/
 /.pnp
