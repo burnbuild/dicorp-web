@@ -53,7 +53,7 @@ function ContactContent({ locale }: { locale: string }) {
               "radial-gradient(circle, rgba(176,214,67,0.32), transparent 70%)",
           }}
         />
-        <div className="mx-auto max-w-[1080px] px-6 py-24 md:px-8 md:py-32">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
           <p className="mp-fade-up text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("title")}
           </p>
@@ -73,7 +73,7 @@ function ContactContent({ locale }: { locale: string }) {
       </section>
 
       <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-teal-light)]">
-        <div className="mx-auto max-w-[1080px] px-6 py-20 md:px-8 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
           <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("responseHeading")}
           </h2>
@@ -84,7 +84,7 @@ function ContactContent({ locale }: { locale: string }) {
       </section>
 
       <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-[1080px] px-6 py-20 md:px-8 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
           <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("studioHeading")}
           </h2>

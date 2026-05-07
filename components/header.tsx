@@ -9,7 +9,7 @@ export function Header({ locale }: { locale: Locale }) {
 
   return (
     <header className="sticky top-0 z-30 h-16 border-b border-[var(--color-border)] bg-white/75 backdrop-blur-md">
-      <div className="mx-auto flex h-full max-w-[1080px] items-center justify-between gap-4 px-5 md:px-8">
+      <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between gap-4 px-6 md:px-8">
         <Link
           href={`/${locale}`}
           aria-label="Home"

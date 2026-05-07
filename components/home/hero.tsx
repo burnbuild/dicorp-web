@@ -62,7 +62,7 @@ export function Hero({ locale }: { locale: Locale }) {
         </p>
       </div>
 
-      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 pb-32 pt-24 md:grid-cols-[1.1fr_1fr] md:px-8 md:pb-40 md:pt-32">
+      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 gap-12 px-6 py-24 md:grid-cols-[1.1fr_1fr] md:px-8 md:py-32">
         {/* left: text */}
         <div className="relative z-10">
           <p className="mp-fade-up flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">

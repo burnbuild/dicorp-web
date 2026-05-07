@@ -11,7 +11,7 @@ export function Principles() {
 
   return (
     <section className="border-t border-[var(--color-border)] bg-white">
-      <div className="mx-auto max-w-[1080px] px-6 py-24 md:px-8 md:py-32">
+      <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
         <p className="mp-fade-up text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
           {t("label")}
         </p>
