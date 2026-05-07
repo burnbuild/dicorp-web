@@ -97,6 +97,11 @@ body {
   }
 }
 
+/* last section of <main> grows to fill viewport — prevents white gap before footer */
+main > *:last-child {
+  flex-grow: 1;
+}
+
 /* CTA glow */
 .cta-glow {
   box-shadow: 0 4px 24px rgba(176, 214, 67, 0.45);
