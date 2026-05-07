@@ -10,6 +10,8 @@
 
 **Reference spec:** `docs/superpowers/specs/2026-05-07-dicorp-web-design.md`
 
+> **Updated 2026-05-07 (Modern Polish patch):** Visual 톤을 Pure Minimal에서 한 단계 화려한 **Modern Polish**로 상향. 그라디언트 배경, 그라디언트 텍스트 강조, scroll-triggered fade-in motion, CTA glow 추가. 영상/WebGL 미사용, 1인 부담 최소화. 아래 task의 globals.css, Hero, AboutSummary, WorkPreview, ContactCta, ProjectCard, About hero, Work hero에 적용. 자세한 변경은 plan 끝의 **"Modern Polish patches"** 섹션 참조.
+
 ---
 
 ## File Structure (이 plan으로 만들 파일들)
@@ -2560,3 +2562,221 @@ prod URL 기준 Lighthouse 점수가 spec DoD 기준선 통과하는지.
 **Type consistency:** `Locale` 타입은 `i18n/routing.ts`에서 export, 각 컴포넌트에서 일관 사용 (`"en" | "ko"`). `COMPANY` 객체 키 (name.en/ko, address.en/ko, registrationNumber, foundedAt, email, url)는 모든 사용처에서 동일.
 
 **Spec gap 발견:** spec Section 7.1 디렉토리에 `next.config.ts`, `tailwind.config.ts`이 있지만 Tailwind v4는 `tailwind.config.ts`가 필요 없음 (`@theme` directive가 globals.css에 있음). Plan은 v4에 맞춰 작성됨 — spec과 약간 어긋나지만 implementation이 더 정확. 향후 spec 갱신 시 이 부분 수정 권장.
+
+---
+
+## Modern Polish patches (2026-05-07)
+
+기본 plan은 그대로 두고, 시각 보강을 위한 추가 변경사항만 묶어서 명시. 실행 시 해당 task의 코드 블록에 다음을 통합한다.
+
+### MP-1. `app/globals.css` 보강 (Task 0.3 step 3 대체)
+
+`@theme` 블록에 추가 토큰 + scroll motion utilities + body wash:
+
+```css
+@import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable.css";
+
+@theme {
+  /* base */
+  --color-bg: #ffffff;
+  --color-fg: #111111;
+  --color-fg-muted: #6b6b6b;
+  --color-border: #e5e5e5;
+
+  /* accents */
+  --color-accent: #b0d643;
+  --color-accent-fg: #111111;
+  --color-accent-2: #69a5a4;
+  --color-accent-deep: #8fb52e;
+
+  /* washes */
+  --color-wash-lime-light: #fafdf2;
+  --color-wash-lime: #f0f9e6;
+  --color-wash-teal-light: #f5fafa;
+
+  --font-sans: "Inter", "Pretendard Variable", -apple-system,
+    BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+html[lang="ko"] body {
+  font-family: "Pretendard Variable", "Inter", system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}
+
+/* gradient text helper */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent-2), var(--color-fg));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* hero blob */
+.hero-blob {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(40px);
+  opacity: 0.5;
+}
+
+/* scroll fade-in */
+@keyframes mp-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.mp-fade-up {
+  animation: mp-fade-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.mp-fade-up-delay-1 {
+  animation-delay: 0.1s;
+}
+.mp-fade-up-delay-2 {
+  animation-delay: 0.2s;
+}
+.mp-fade-up-delay-3 {
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-fade-up,
+  .mp-fade-up-delay-1,
+  .mp-fade-up-delay-2,
+  .mp-fade-up-delay-3 {
+    animation: none;
+  }
+}
+
+/* CTA glow */
+.cta-glow {
+  box-shadow: 0 4px 24px rgba(176, 214, 67, 0.45);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.cta-glow:hover {
+  box-shadow: 0 6px 32px rgba(176, 214, 67, 0.6);
+  transform: translateY(-1px);
+}
+```
+
+### MP-2. Hero 섹션 (Task 3.1 step 2 보강)
+
+`components/home/hero.tsx`의 Section 안 markup을 다음으로 교체:
+
+```tsx
+import Link from "next/link";
+import { useTranslations } from "next-intl";
+
+export function Hero({ locale }: { locale: "en" | "ko" }) {
+  const t = useTranslations("home.hero");
+  return (
+    <section className="relative overflow-hidden">
+      {/* background wash + blob */}
+      <div
+        className="absolute inset-0 -z-10"
+        style={{ background: "linear-gradient(180deg, #fafdf2 0%, #ffffff 100%)" }}
+      />
+      <div
+        className="hero-blob -z-10"
+        style={{
+          top: "-8rem",
+          right: "-8rem",
+          width: "32rem",
+          height: "32rem",
+          background:
+            "radial-gradient(circle, rgba(176,214,67,0.35), transparent 70%)",
+        }}
+      />
+
+      <div className="mx-auto max-w-[1080px] px-6 py-28 md:px-8 md:py-40">
+        <p className="mp-fade-up text-xs uppercase tracking-[0.2em] text-[var(--color-fg-muted)]">
+          Di Corporations
+        </p>
+        <h1 className="mp-fade-up mp-fade-up-delay-1 mt-6 max-w-[18ch] text-[clamp(2.5rem,6vw,4.5rem)] font-bold leading-[1.02] tracking-tight">
+          {t("tagline").split(" ").slice(0, -2).join(" ")}{" "}
+          <span className="gradient-text">{t("tagline").split(" ").slice(-2).join(" ")}</span>
+        </h1>
+        <p className="mp-fade-up mp-fade-up-delay-2 mt-6 max-w-[40ch] text-base text-[var(--color-fg-muted)] md:text-lg">
+          {t("subline")}
+        </p>
+        <Link
+          href={`/${locale}/work`}
+          className="cta-glow mp-fade-up mp-fade-up-delay-3 mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-6 py-3 text-sm font-semibold text-[var(--color-accent-fg)]"
+        >
+          {t("cta")} <span aria-hidden>→</span>
+        </Link>
+      </div>
+    </section>
+  );
+}
+```
+
+> 주의: tagline 그라디언트 분할은 EN("Healthier days. Goals that stick.") 기준으로 마지막 두 단어만 강조. KO("건강하게, 원하는 곳까지.")는 split이 자연스럽지 않으므로 fallback로 KO일 때는 두 번째 줄 한 줄 통째로 그라디언트. 구현 시 `locale === "ko"` 분기 처리.
+
+### MP-3. AboutSummary / WorkPreview / ContactCta 섹션 wash + motion
+
+각 섹션의 wrapper에 wash 배경 + scroll-triggered fade. Tailwind class를 다음 패턴으로:
+
+- AboutSummary: `bg-[var(--color-wash-teal-light)]` + 자식 텍스트에 `mp-fade-up`.
+- WorkPreview: `bg-[var(--color-wash-lime)]` + 카드를 둥근 카드로 (`rounded-3xl`, `border border-[var(--color-border)]`, `bg-white`, shadow) — 카드가 wash 위에 띄워진 느낌.
+- ContactCta: `bg-[var(--color-fg)] text-white` 다크 섹션으로 contrast → 스크롤 끝 임팩트. CTA 버튼은 lime cta-glow 그대로.
+
+### MP-4. ProjectCard (Task 3.3) Polish
+
+`components/work/project-card.tsx` 카드 자체에 그라디언트 보더 + hover lift 추가:
+
+```tsx
+<article className="group relative grid gap-6 overflow-hidden rounded-3xl border border-[var(--color-border)] bg-white p-8 transition hover:-translate-y-1 hover:shadow-[0_12px_48px_rgba(0,0,0,0.06)] md:grid-cols-[2fr_3fr] md:gap-12 md:p-12">
+  <div
+    className="pointer-events-none absolute -right-32 -top-32 h-64 w-64 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+    style={{ background: "radial-gradient(circle, rgba(176,214,67,0.3), transparent 70%)" }}
+  />
+  {/* ... 본문 그대로 ... */}
+</article>
+```
+
+### MP-5. Header — scroll-aware
+
+Task 2.4의 Header에 scroll-down 시 더 강한 backdrop blur + 살짝 shadow 추가:
+
+```tsx
+<header className="sticky top-0 z-30 h-16 border-b border-[var(--color-border)] bg-white/70 backdrop-blur-md transition-shadow [&[data-scrolled='true']]:shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
+```
+
+스크롤 감지: 클라이언트 컴포넌트로 분리하거나, CSS-only로 대체 (예: `@supports (animation-timeline: scroll())` ). 1인 부담 고려, Tailwind 기본 `bg-white/70 backdrop-blur-md`만 적용해도 충분. scroll-aware는 옵션.
+
+### MP-6. About / Work hero 섹션도 동일 패턴
+
+About 페이지와 Work 페이지의 첫 Section에도 `relative overflow-hidden` + hero-blob (작게, opacity 낮게) + lede에 `mp-fade-up` 적용. Hero 섹션과 같은 패턴 재사용.
+
+### MP-7. Privacy / Terms는 polish 적용 안 함
+
+법적 텍스트 페이지는 가독성 우선. 그라디언트, motion 미적용. 흰 배경 그대로.
+
+### MP-8. 테스트 항목 추가
+
+- Lighthouse Performance 90+ 유지 (모든 motion이 CSS-only라 영향 없어야 함).
+- `prefers-reduced-motion: reduce` 사용자에게 motion 안 보이는지 DevTools에서 토글로 확인.
+- 그라디언트 텍스트가 폴리필 없이 모든 모던 브라우저에서 잘 보이는지 (Safari 확인 필수).
+

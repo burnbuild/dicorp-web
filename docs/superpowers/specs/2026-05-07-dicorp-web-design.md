@@ -88,22 +88,55 @@
 
 ## 6. Visual design
 
+> **Updated 2026-05-07:** 톤을 **Modern Polish**(Pure Minimal에서 한 단계 화려)로 상향. 사용자가 "1인 회사라 minimal이 너무 심심함"이라고 판단. Apple 심사 안전선 안에서 가능한 화려함을 최대한 챙김.
+
 ### 6.1 톤
 
-- **Minimal Light** (Apple / Linear / Vercel 톤). 흰 배경, 검정 텍스트, 산세리프, 여백 넉넉.
-- 액센트 컬러 1개: **라임 그린 #B0D643** (로고에서 추출). hover, 링크 underline, primary CTA에만 사용.
-- 보조 컬러: 청록 #69A5A4 (로고에서 추출, 매우 절제하여 사용 — 예: 작은 badge).
+- **베이스: Minimal Light** (Apple / Linear / Vercel 톤). 흰 배경, 검정 텍스트, 산세리프, 여백 넉넉.
+- **Polish 보강:**
+  - **Gradient backgrounds** — Hero와 섹션 구분에 라임/청록 라이트 그라디언트 (`linear-gradient` 또는 radial blob) 사용. 흰 배경 100%는 아니고 베이지/라임 옅은 wash 위에 텍스트.
+  - **Gradient text accents** — Hero tagline 두 번째 줄 같은 곳에 `background-clip: text` 그라디언트 강조 (라임 → 청록).
+  - **Subtle motion** — scroll-triggered fade-in/slide-up (CSS `@starting-style` + view-transitions, 또는 Tailwind v4 native animation. framer-motion 없이 CSS-only로 가벼움 유지).
+  - **Glow shadows** — primary CTA 버튼에 라임 glow box-shadow (`0 0 24px rgba(176,214,67,0.4)`).
+  - **Hero blob** — Hero 우상단에 라임 radial gradient blob (decorative, opacity 30~40%).
+  - **Section transitions** — 각 섹션 사이 hairline border + 살짝 다른 배경 wash로 layered 느낌.
+- **유지하는 minimal 원칙:**
+  - 영상 배경 X (퍼포먼스 + Apple 심사 카테고리 안전).
+  - WebGL/3D X (over-engineering, 1인 부담).
+  - 텍스트 가독성 최우선 (그라디언트는 헤드라인 일부에만, 본문 텍스트는 흰/검 단색).
+  - 모션 prefers-reduced-motion 존중 (모든 motion에 reduced-motion 변종 제공).
+- **컬러 토큰:**
+  - Primary 액센트: **라임 그린 #B0D643** — CTA 버튼 배경, 그라디언트 시작.
+  - Secondary 액센트: **청록 #69A5A4** — 그라디언트 끝, 호버 텍스트.
+  - Background washes: `#fafdf2` (라임 옅음), `#f0f9e6` (라임 좀 더 진함), `#f5fafa` (청록 옅음). 각 섹션마다 이 중 하나로 살짝 wash.
 
 ### 6.2 Color tokens
 
 ```css
+/* base */
 --color-bg: #ffffff;
 --color-fg: #111111;
 --color-fg-muted: #6b6b6b;
 --color-border: #e5e5e5;
---color-accent: #B0D643;       /* lime — primary accent */
---color-accent-fg: #111111;    /* on lime */
---color-accent-2: #69A5A4;     /* teal — secondary, sparing */
+
+/* accents (Modern Polish) */
+--color-accent: #B0D643;            /* lime — primary CTA */
+--color-accent-fg: #111111;         /* on lime */
+--color-accent-2: #69A5A4;          /* teal — secondary */
+--color-accent-deep: #8FB52E;       /* lime darkened — gradient stop */
+
+/* section washes (Modern Polish) */
+--wash-lime-light: #fafdf2;
+--wash-lime: #f0f9e6;
+--wash-teal-light: #f5fafa;
+
+/* gradients */
+--gradient-text: linear-gradient(135deg, var(--color-accent-2), var(--color-fg));
+--gradient-cta: linear-gradient(135deg, var(--color-accent), var(--color-accent-deep));
+--gradient-hero-blob: radial-gradient(circle, rgba(176,214,67,0.35), transparent 70%);
+
+/* glow */
+--glow-cta: 0 4px 24px rgba(176,214,67,0.45);
 ```
 
 ### 6.3 Typography
