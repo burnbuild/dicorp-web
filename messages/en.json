@@ -14,13 +14,30 @@
     "privacy": "Privacy",
     "terms": "Terms",
     "navHeading": "Site",
-    "studioHeading": "Studio"
+    "studioHeading": "Studio",
+    "wordmark": {
+      "primary": "DIGITAL",
+      "secondary": "INNOVATION",
+      "subline": "Healthier days. Goals that stick."
+    }
   },
   "home": {
     "hero": {
+      "deco": "DIGITAL INNOVATION",
       "tagline": "Healthier days. Goals that stick.",
       "subline": "An independent digital studio building thoughtful apps that help people stay healthy and finish what they start.",
-      "cta": "See our work"
+      "cta": "See our work",
+      "secondaryCta": "Get in touch",
+      "marker": "Studio · Songdo, Korea"
+    },
+    "glance": {
+      "label": "Studio at a glance",
+      "items": [
+        { "value": "2025", "label": "Founded" },
+        { "value": "1", "label": "App in development" },
+        { "value": "3yr+", "label": "Designed lifespan" },
+        { "value": "0", "label": "Dark patterns" }
+      ]
     },
     "aboutSummary": {
       "label": "What we do",
@@ -45,6 +62,35 @@
         }
       ]
     },
+    "manifesto": {
+      "label": "Why now",
+      "headingLeft": "Most software is designed",
+      "headingHighlight": "to keep you scrolling.",
+      "headingRight": "We are designing the opposite.",
+      "body": "The web of the last decade was built around one number: time-on-app. Every loop, every notification, every streak was tuned to add another minute. The result is a generation of products that win when their users lose. We don't think that's the future of software. The next decade of apps will be measured by something different — not how long you stayed, but whether your day was a little better for opening them. That is the kind of software we want to make. Quiet. Patient. Designed to be missed when you are away from your phone, not while you are on it."
+    },
+    "antiPatterns": {
+      "label": "What we don't build",
+      "heading": "The four things we will never ship.",
+      "items": [
+        {
+          "title": "Streaks that punish",
+          "body": "We don't build features that make a sick day, a busy week, or a real life feel like a failure."
+        },
+        {
+          "title": "Notifications that nag",
+          "body": "Every push has to earn its place. Most don't. The default is silence."
+        },
+        {
+          "title": "Engagement metrics as success",
+          "body": "We don't measure success by sessions per day. We measure it by whether you reach the goals you set for yourself."
+        },
+        {
+          "title": "Dark patterns",
+          "body": "No fake urgency, no confusing unsubscribe flows, no infinite-scroll traps. If a pattern only works because users don't notice it, it isn't shipping."
+        }
+      ]
+    },
     "workPreview": {
       "label": "Currently building",
       "title": "BurnBuild",
@@ -63,6 +109,9 @@
     "lede": "Di Corporations is an independent digital studio building thoughtful apps for everyday life.",
     "missionHeading": "What we believe",
     "missionBody": "We believe small, careful software can change the texture of someone's day. Our work focuses on health and the goals people set for themselves — the kind of goals that, kept day after day, change a life. The web is full of software designed to capture attention. We are trying to build the opposite: software designed to give it back.",
+    "missionQuote": "Software that wins when its users win. Nothing else.",
+    "originHeading": "How we got here",
+    "originBody": "Di Corporations was founded in late 2025 with a single, stubborn question: what would software look like if it were measured by whether your day got better, not by how long you stayed inside it? The first answer is BurnBuild — a fitness companion that treats your year, not your week, as the unit of progress. The studio was born to build that kind of product, and the ones that come after it.",
     "principlesHeading": "Principles",
     "principles": [
       {
@@ -101,6 +150,8 @@
         "body": "We release in small, deliberate steps. The product gets sharper with use, not louder. Quiet improvements, year after year."
       }
     ],
+    "antiHeading": "What we don't make",
+    "antiBody": "We don't take work that depends on dark patterns, engagement-at-any-cost growth, or features whose only purpose is retention. If a project requires us to design against the user's interest, it isn't a project we take.",
     "factsHeading": "The studio",
     "facts": {
       "founded": "Founded",
@@ -138,6 +189,25 @@
         }
       ]
     },
+    "againstGrainHeading": "Designed against the grain",
+    "againstGrain": [
+      {
+        "instead": "Instead of streaks",
+        "we": "we measure consistency over months, not days. Miss a day; it doesn't reset you."
+      },
+      {
+        "instead": "Instead of pushing notifications",
+        "we": "we let you set quiet hours by default and never re-prompt to enable them."
+      },
+      {
+        "instead": "Instead of social leaderboards",
+        "we": "we show you only your own line — a private chart, no comparison."
+      },
+      {
+        "instead": "Instead of dopamine animations",
+        "we": "we keep the interface still, so it stops feeling like a game and starts feeling like a tool."
+      }
+    ],
     "futureSlot": {
       "label": "More projects in time.",
       "body": "We move slowly on purpose. New work shows up here when it is ready — not before. If you want to know when something does, the best signal is the email at the bottom of this page."
@@ -147,7 +217,7 @@
     "title": "Contact",
     "lede": "We read every email.",
     "body": "For project inquiries, partnerships, press, or just to say hello — please get in touch. We answer in English or Korean.",
-    "emailButton": "Email contact@dicorporations.com",
+    "emailButton": "Email manager@dicorporations.com",
     "studioHeading": "Studio",
     "registrationLabel": "Business Reg.",
     "addressLabel": "Address",
@@ -165,7 +235,7 @@
       },
       {
         "heading": "2. Data we may collect",
-        "body": "(a) Anonymized analytics through Vercel Analytics — page paths, country, device type, no personal identifiers. (b) Email correspondence you send to contact@dicorporations.com — used only to reply to you."
+        "body": "(a) Anonymized analytics through Vercel Analytics — page paths, country, device type, no personal identifiers. (b) Email correspondence you send to manager@dicorporations.com — used only to reply to you."
       },
       {
         "heading": "3. Cookies",
@@ -173,11 +243,11 @@
       },
       {
         "heading": "4. Your rights",
-        "body": "Under applicable laws (including the Personal Information Protection Act of South Korea and GDPR where applicable), you may request access, correction, or deletion of any personal data we hold about you. Contact contact@dicorporations.com to exercise these rights."
+        "body": "Under applicable laws (including the Personal Information Protection Act of South Korea and GDPR where applicable), you may request access, correction, or deletion of any personal data we hold about you. Contact manager@dicorporations.com to exercise these rights."
       },
       {
         "heading": "5. Data controller",
-        "body": "Di Corporations · Business Reg. No. 268-87-03171 · B-439, Songdo Centum Hive, 30-6 Songdo-dong, Yeonsu-gu, Incheon 22007, Republic of Korea · contact@dicorporations.com"
+        "body": "Di Corporations · Business Reg. No. 268-87-03171 · B-439, Songdo Centum Hive, 30-6 Songdo-dong, Yeonsu-gu, Incheon 22007, Republic of Korea · manager@dicorporations.com"
       }
     ]
   },
@@ -208,7 +278,7 @@
       },
       {
         "heading": "6. Contact",
-        "body": "Questions about these Terms: contact@dicorporations.com."
+        "body": "Questions about these Terms: manager@dicorporations.com."
       }
     ]
   },
@@ -228,7 +298,7 @@
     },
     "contact": {
       "title": "Contact — Di Corporations",
-      "description": "Get in touch by email at contact@dicorporations.com. We answer in English or Korean within two business days."
+      "description": "Get in touch by email at manager@dicorporations.com. We answer in English or Korean within two business days."
     },
     "privacy": {
       "title": "Privacy Policy — Di Corporations",

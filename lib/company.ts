@@ -10,7 +10,7 @@ export const COMPANY = {
     en: "B-439, Songdo Centum Hive, 30-6 Songdo-dong, Yeonsu-gu, Incheon 22007, Republic of Korea",
     ko: "(22007) 인천광역시 연수구 송도동 30-6 송도센텀하이브 B동 439호",
   },
-  email: "contact@dicorporations.com",
+  email: "manager@dicorporations.com",
   domain: "dicorporations.com",
   url: "https://dicorporations.com",
 } as const;
