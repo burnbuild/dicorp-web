@@ -101,7 +101,12 @@
     "contactCta": {
       "title": "Working on something?",
       "subline": "Project inquiries, partnerships, or just want to chat — we read every email.",
-      "button": "Email us"
+      "button": "Email us",
+      "stats": [
+        { "value": "2 days", "label": "Response time" },
+        { "value": "KO · EN", "label": "Languages" },
+        { "value": "100%", "label": "Personally read" }
+      ]
     }
   },
   "about": {
