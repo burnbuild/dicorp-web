@@ -1,26 +1,109 @@
 @import "tailwindcss";
+@import "pretendard/dist/web/variable/pretendardvariable.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* base */
+  --color-bg: #ffffff;
+  --color-fg: #111111;
+  --color-fg-muted: #6b6b6b;
+  --color-border: #e5e5e5;
+
+  /* accents */
+  --color-accent: #b0d643;
+  --color-accent-fg: #111111;
+  --color-accent-2: #69a5a4;
+  --color-accent-deep: #8fb52e;
+
+  /* washes */
+  --color-wash-lime-light: #fafdf2;
+  --color-wash-lime: #f0f9e6;
+  --color-wash-teal-light: #f5fafa;
+
+  --font-sans: "Inter", "Pretendard Variable", -apple-system,
+    BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  background: var(--color-bg);
+  color: var(--color-fg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html[lang="ko"] body {
+  font-family: "Pretendard Variable", "Inter", system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}
+
+/* gradient text helper */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent-2), var(--color-fg));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* hero blob */
+.hero-blob {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(40px);
+  opacity: 0.5;
+}
+
+/* scroll fade-in */
+@keyframes mp-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mp-fade-up {
+  animation: mp-fade-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.mp-fade-up-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.mp-fade-up-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.mp-fade-up-delay-3 {
+  animation-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mp-fade-up,
+  .mp-fade-up-delay-1,
+  .mp-fade-up-delay-2,
+  .mp-fade-up-delay-3 {
+    animation: none;
+  }
+}
+
+/* CTA glow */
+.cta-glow {
+  box-shadow: 0 4px 24px rgba(176, 214, 67, 0.45);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.cta-glow:hover {
+  box-shadow: 0 6px 32px rgba(176, 214, 67, 0.6);
+  transform: translateY(-1px);
 }

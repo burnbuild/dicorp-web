@@ -1,0 +1,166 @@
+{
+  "nav": {
+    "about": "About",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "footer": {
+    "businessNumberLabel": "Business Reg. No.",
+    "addressLabel": "Address",
+    "emailLabel": "Email",
+    "foundedLabel": "Founded",
+    "copyright": "© {year} Di Corporations. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "home": {
+    "hero": {
+      "tagline": "Healthier days. Goals that stick.",
+      "subline": "An independent digital studio.",
+      "cta": "See our work"
+    },
+    "aboutSummary": {
+      "label": "What we do",
+      "body": "Di Corporations builds digital products that help people focus on their health and reach the goals that matter to them.",
+      "cta": "Read more"
+    },
+    "workPreview": {
+      "label": "Currently building",
+      "title": "BurnBuild",
+      "description": "A fitness companion app. In development for iOS, Android, and the web.",
+      "status": "In development",
+      "cta": "View work"
+    },
+    "contactCta": {
+      "title": "Working on something?",
+      "subline": "Reach out — we read every email.",
+      "button": "Email us"
+    }
+  },
+  "about": {
+    "title": "About",
+    "lede": "Di Corporations is an independent digital studio building thoughtful apps for everyday life.",
+    "missionHeading": "What we believe",
+    "missionBody": "We believe small, careful software can change the texture of someone's day. Our work focuses on health and the goals people set for themselves — the kind of goals that, kept day after day, change a life.",
+    "factsHeading": "The studio",
+    "facts": {
+      "founded": "Founded",
+      "team": "Team",
+      "teamValue": "1 (founder-only)",
+      "based": "Based in",
+      "basedValue": "Songdo, Incheon, South Korea",
+      "registration": "Business Reg.",
+      "currentlyBuilding": "Currently building",
+      "currentlyBuildingValue": "BurnBuild — a fitness companion app"
+    }
+  },
+  "work": {
+    "title": "Work",
+    "lede": "What we are building, in the open.",
+    "burnbuild": {
+      "name": "BurnBuild",
+      "tagline": "A fitness companion app.",
+      "description": "BurnBuild is being built for people who want to make exercise a daily habit — not a once-in-a-while sprint. Cross-platform: iOS, Android, and the web. Currently in active development.",
+      "status": "In development",
+      "platforms": "iOS · Android · Web"
+    },
+    "futureSlot": {
+      "label": "More projects in time.",
+      "body": "We move slowly on purpose. New work shows up here when it is ready."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "lede": "We read every email.",
+    "body": "For project inquiries, partnerships, or anything else — please get in touch.",
+    "emailButton": "Email contact@dicorporations.com",
+    "studioHeading": "Studio",
+    "registrationLabel": "Business Reg.",
+    "addressLabel": "Address"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: 2026-05-07",
+    "intro": "Di Corporations (\"the Studio\", \"we\", \"us\") respects your privacy. This page describes what data this website collects and how it is handled.",
+    "sections": [
+      {
+        "heading": "1. Data we do not collect",
+        "body": "This website does not require an account, does not host a contact form, and does not run third-party advertising or marketing trackers. We do not sell or share user data."
+      },
+      {
+        "heading": "2. Data we may collect",
+        "body": "(a) Anonymized analytics through Vercel Analytics — page paths, country, device type, no personal identifiers. (b) Email correspondence you send to contact@dicorporations.com — used only to reply to you."
+      },
+      {
+        "heading": "3. Cookies",
+        "body": "This website does not set tracking cookies. The hosting provider may use technically necessary cookies for security."
+      },
+      {
+        "heading": "4. Your rights",
+        "body": "Under applicable laws (including the Personal Information Protection Act of South Korea and GDPR where applicable), you may request access, correction, or deletion of any personal data we hold about you. Contact contact@dicorporations.com to exercise these rights."
+      },
+      {
+        "heading": "5. Data controller",
+        "body": "Di Corporations · Business Reg. No. 268-87-03171 · B-439, Songdo Centum Hive, 30-6 Songdo-dong, Yeonsu-gu, Incheon 22007, Republic of Korea · contact@dicorporations.com"
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: 2026-05-07",
+    "intro": "These Terms govern your use of dicorporations.com. By visiting this website, you agree to the terms below.",
+    "sections": [
+      {
+        "heading": "1. The website",
+        "body": "dicorporations.com is the corporate website of Di Corporations. It is provided for informational purposes only and does not constitute an offer of any product or service unless explicitly stated."
+      },
+      {
+        "heading": "2. Intellectual property",
+        "body": "All text, graphics, logos, and code on this website are owned by Di Corporations unless otherwise noted. You may not copy, redistribute, or create derivative works without prior written permission."
+      },
+      {
+        "heading": "3. Third-party links",
+        "body": "This website may link to external sites. We are not responsible for the content or practices of those sites."
+      },
+      {
+        "heading": "4. Disclaimer",
+        "body": "The website is provided \"as is\" without warranties of any kind. To the maximum extent permitted by law, Di Corporations is not liable for any damages arising from your use of the website."
+      },
+      {
+        "heading": "5. Governing law",
+        "body": "These Terms are governed by the laws of the Republic of Korea, without regard to conflict-of-law principles."
+      },
+      {
+        "heading": "6. Contact",
+        "body": "Questions about these Terms: contact@dicorporations.com."
+      }
+    ]
+  },
+  "meta": {
+    "siteName": "Di Corporations",
+    "home": {
+      "title": "Di Corporations — Independent Digital Studio",
+      "description": "Di Corporations is an independent digital studio building thoughtful apps for everyday life."
+    },
+    "about": {
+      "title": "About — Di Corporations",
+      "description": "An independent digital studio based in Songdo, Incheon, building small, careful software focused on health and goals."
+    },
+    "work": {
+      "title": "Work — Di Corporations",
+      "description": "Currently building BurnBuild — a fitness companion app for iOS, Android, and web."
+    },
+    "contact": {
+      "title": "Contact — Di Corporations",
+      "description": "Get in touch by email at contact@dicorporations.com."
+    },
+    "privacy": {
+      "title": "Privacy Policy — Di Corporations",
+      "description": "How dicorporations.com handles data and respects your privacy."
+    },
+    "terms": {
+      "title": "Terms of Service — Di Corporations",
+      "description": "Terms governing use of dicorporations.com."
+    }
+  }
+}
