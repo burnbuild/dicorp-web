@@ -11,7 +11,7 @@ export function ContactCta() {
   const stats = messages.home.contactCta.stats;
 
   return (
-    <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-fg)] text-white">
+    <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-wash-lime-light)]">
       <div
         className="hero-blob"
         style={{
@@ -20,7 +20,7 @@ export function ContactCta() {
           width: "26rem",
           height: "26rem",
           background:
-            "radial-gradient(circle, rgba(176,214,67,0.18), transparent 70%)",
+            "radial-gradient(circle, rgba(176,214,67,0.45), transparent 70%)",
         }}
       />
       <div
@@ -31,7 +31,7 @@ export function ContactCta() {
           width: "20rem",
           height: "20rem",
           background:
-            "radial-gradient(circle, rgba(105,165,164,0.18), transparent 70%)",
+            "radial-gradient(circle, rgba(105,165,164,0.22), transparent 70%)",
         }}
       />
 
@@ -41,7 +41,7 @@ export function ContactCta() {
           <h2 className="mp-fade-up max-w-[20ch] text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-[1.08] tracking-tight">
             {t("title")}
           </h2>
-          <p className="mp-fade-up mp-fade-up-delay-1 mt-6 max-w-[40ch] text-lg text-white/70">
+          <p className="mp-fade-up mp-fade-up-delay-1 mt-6 max-w-[40ch] text-lg text-[var(--color-fg-muted)]">
             {t("subline")}
           </p>
           <a
@@ -54,8 +54,8 @@ export function ContactCta() {
 
         {/* right: stats card */}
         <aside className="mp-fade-up mp-fade-up-delay-3 self-stretch">
-          <div className="flex h-full flex-col gap-8 rounded-3xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur md:p-10">
-            <p className="text-xs uppercase tracking-[0.25em] text-white/45">
+          <div className="flex h-full flex-col gap-8 rounded-3xl border border-[var(--color-border)] bg-white p-8 shadow-[0_8px_40px_rgba(0,0,0,0.04)] md:p-10">
+            <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
               {COMPANY.email}
             </p>
             <dl className="flex flex-col gap-7">
@@ -63,10 +63,10 @@ export function ContactCta() {
                 <div
                   key={stat.label}
                   className={`flex flex-col gap-1 ${
-                    i > 0 ? "border-t border-white/10 pt-7" : ""
+                    i > 0 ? "border-t border-[var(--color-border)] pt-7" : ""
                   }`}
                 >
-                  <dt className="text-xs uppercase tracking-wider text-white/40">
+                  <dt className="text-xs uppercase tracking-wider text-[var(--color-fg-muted)]">
                     {stat.label}
                   </dt>
                   <dd className="text-[clamp(2rem,3.5vw,2.75rem)] font-bold leading-none tracking-tight">

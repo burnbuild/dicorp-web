@@ -79,8 +79,8 @@ function AboutContent() {
         </div>
       </section>
 
-      {/* Mission quote — huge typography */}
-      <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-fg)] text-white">
+      {/* Mission quote — huge typography on white */}
+      <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-white">
         <div
           className="hero-blob"
           style={{
@@ -89,20 +89,24 @@ function AboutContent() {
             width: "28rem",
             height: "28rem",
             background:
-              "radial-gradient(circle, rgba(176,214,67,0.18), transparent 70%)",
+              "radial-gradient(circle, rgba(105,165,164,0.22), transparent 70%)",
           }}
         />
         <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
-          <p className="text-xs uppercase tracking-[0.25em] text-white/50">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("missionHeading")}
           </p>
           <blockquote className="mt-10 max-w-[24ch] text-[clamp(2.25rem,5.5vw,4.5rem)] font-semibold leading-[1.08] tracking-tight">
-            <span aria-hidden className="block text-[var(--color-accent)] opacity-60">
+            <span
+              aria-hidden
+              className="block text-[var(--color-accent-2)] opacity-50"
+              style={{ fontSize: "1.4em", lineHeight: 0.7 }}
+            >
               "
             </span>
-            {t("missionQuote")}
+            <span className="gradient-text">{t("missionQuote")}</span>
           </blockquote>
-          <p className="mt-12 max-w-[68ch] text-lg leading-[1.7] text-white/70 md:text-xl md:leading-[1.65]">
+          <p className="mt-12 max-w-[68ch] text-lg leading-[1.7] text-[var(--color-fg-muted)] md:text-xl md:leading-[1.65]">
             {t("missionBody")}
           </p>
         </div>

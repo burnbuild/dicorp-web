@@ -155,7 +155,7 @@ function WorkContent() {
       </section>
 
       {/* Against the grain */}
-      <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-fg)] text-white">
+      <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-white">
         <div
           className="hero-blob"
           style={{
@@ -164,7 +164,7 @@ function WorkContent() {
             width: "28rem",
             height: "28rem",
             background:
-              "radial-gradient(circle, rgba(176,214,67,0.16), transparent 70%)",
+              "radial-gradient(circle, rgba(176,214,67,0.3), transparent 70%)",
           }}
         />
         <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
@@ -175,15 +175,15 @@ function WorkContent() {
             {grain.map((row, i) => (
               <li
                 key={row.instead}
-                className="flex flex-col gap-3 border-t border-white/15 pt-6"
+                className="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6"
               >
-                <span className="text-xs font-mono text-white/40">
+                <span className="text-xs font-mono text-[var(--color-fg-muted)]">
                   0{i + 1}
                 </span>
-                <p className="text-lg font-semibold tracking-tight text-white">
+                <p className="text-lg font-semibold tracking-tight">
                   {row.instead},
                 </p>
-                <p className="text-base leading-relaxed text-white/65">
+                <p className="text-base leading-relaxed text-[var(--color-fg-muted)]">
                   {row.we}
                 </p>
               </li>
