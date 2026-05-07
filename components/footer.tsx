@@ -22,11 +22,7 @@ export function Footer({ locale }: { locale: Locale }) {
         }}
       />
       <div className="relative mx-auto max-w-[1200px] px-6 pt-20 pb-10 md:px-8">
-        <p className="max-w-[40ch] text-base leading-relaxed text-white/85">
-          {t("tagline")}
-        </p>
-
-        <div className="mt-16 grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
           {/* studio facts */}
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-white/40">
