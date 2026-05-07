@@ -1,10 +1,12 @@
-import { useTranslations, useMessages } from "next-intl";
+import Link from "next/link";
+import { useTranslations, useMessages, useLocale } from "next-intl";
 import { COMPANY } from "@/lib/company";
 
 type Stat = { value: string; label: string };
 
 export function ContactCta() {
   const t = useTranslations("home.contactCta");
+  const locale = useLocale();
   const messages = useMessages() as {
     home: { contactCta: { stats: Stat[] } };
   };
@@ -44,12 +46,12 @@ export function ContactCta() {
           <p className="mp-fade-up mp-fade-up-delay-1 mt-6 max-w-[40ch] text-lg text-[var(--color-fg-muted)]">
             {t("subline")}
           </p>
-          <a
-            href={`mailto:${COMPANY.email}`}
+          <Link
+            href={`/${locale}/contact#contact-form`}
             className="cta-glow mp-fade-up mp-fade-up-delay-2 mt-10 inline-flex items-center gap-2 rounded-full bg-[var(--color-accent)] px-7 py-3 text-sm font-semibold text-[var(--color-accent-fg)]"
           >
             {t("button")} <span aria-hidden>→</span>
-          </a>
+          </Link>
         </div>
 
         {/* right: stats card */}

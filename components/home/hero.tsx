@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { COMPANY } from "@/lib/company";
 import { PhoneMockup } from "@/components/phone-mockup";
 import type { Locale } from "@/i18n/routing";
 
@@ -82,12 +81,12 @@ export function Hero({ locale }: { locale: Locale }) {
             >
               {t("cta")} <span aria-hidden>→</span>
             </Link>
-            <a
-              href={`mailto:${COMPANY.email}`}
+            <Link
+              href={`/${locale}/contact#contact-form`}
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-fg)]/15 bg-white/60 px-7 py-3 text-sm font-medium backdrop-blur transition hover:border-[var(--color-fg)]/40 hover:bg-white"
             >
               {t("secondaryCta")} <span aria-hidden>→</span>
-            </a>
+            </Link>
           </div>
         </div>
 
