@@ -115,6 +115,15 @@
     "missionHeading": "What we believe",
     "missionBody": "We believe small, careful software can change the texture of someone's day. Our work focuses on health and the goals people set for themselves — the kind of goals that, kept day after day, change a life. The web is full of software designed to capture attention. We are trying to build the opposite: software designed to give it back.",
     "missionQuote": "Software that wins when its users win. Nothing else.",
+    "visionHeading": "Where we are going",
+    "visionTagline": "A future where calm, data-honest software is proven by outcomes, not engagement.",
+    "visionBody": "For the last decade, app success was measured by minutes spent inside it. We measure it by whether the day got better. Every Di Corporations product is evaluated against anonymized cohort outcomes — exercise retention, recovery, focus restored, goal completion. We are working toward a future where one person's day, then a year, and eventually hundreds of thousands of lives get measurably better — one quiet product at a time.",
+    "visionFocus": [
+      { "label": "Health", "metric": "Movement · sleep · recovery", "body": "Measured in months and years, not single days. The basics done well, tracked honestly." },
+      { "label": "Habits", "metric": "Retention as the only metric", "body": "Repeatable rhythms tracked across long time horizons — the part of behavior change most apps quit on." },
+      { "label": "Focus", "metric": "Time returned to the user", "body": "Attention is something we give back, not take. Success means our app was opened less, not more." },
+      { "label": "Goals", "metric": "Completion rate vs. industry", "body": "Self-set goals tracked privately and completed at rates that beat industry averages — the data is the proof." }
+    ],
     "originHeading": "How we got here",
     "originBody": "Di Corporations was founded in late 2025 with a single, stubborn question: what would software look like if it were measured by whether your day got better, not by how long you stayed inside it? The first answer is BurnBuild — a fitness companion that treats your year, not your week, as the unit of progress. The studio was born to build that kind of product, and the ones that come after it.",
     "principlesHeading": "Principles",

@@ -5,6 +5,7 @@ import { COMPANY } from "@/lib/company";
 
 type Principle = { title: string; body: string };
 type Step = { step: string; title: string; body: string };
+type Focus = { label: string; metric: string; body: string };
 
 export async function generateMetadata({
   params,
@@ -36,10 +37,15 @@ export default async function AboutPage({
 function AboutContent() {
   const t = useTranslations("about");
   const messages = useMessages() as {
-    about: { principles: Principle[]; approach: Step[] };
+    about: {
+      principles: Principle[];
+      approach: Step[];
+      visionFocus: Focus[];
+    };
   };
   const principles = messages.about.principles;
   const approach = messages.about.approach;
+  const visionFocus = messages.about.visionFocus;
 
   return (
     <>
@@ -99,6 +105,50 @@ function AboutContent() {
           <p className="mt-12 max-w-[68ch] text-lg leading-[1.7] text-white/70 md:text-xl md:leading-[1.65]">
             {t("missionBody")}
           </p>
+        </div>
+      </section>
+
+      {/* Vision */}
+      <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-wash-lime)]">
+        <div
+          className="hero-blob -z-10"
+          style={{
+            top: "-6rem",
+            right: "-6rem",
+            width: "32rem",
+            height: "32rem",
+            background:
+              "radial-gradient(circle, rgba(176,214,67,0.4), transparent 70%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+            {t("visionHeading")}
+          </p>
+          <h2 className="mt-8 max-w-[26ch] text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.08] tracking-tight">
+            {t("visionTagline")}
+          </h2>
+          <p className="mt-10 max-w-[68ch] text-lg leading-[1.7] text-[var(--color-fg-muted)] md:text-xl md:leading-[1.65]">
+            {t("visionBody")}
+          </p>
+
+          {/* Focus areas with metrics */}
+          <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-2 lg:grid-cols-4">
+            {visionFocus.map((f) => (
+              <article
+                key={f.label}
+                className="flex flex-col gap-3 bg-white p-7 transition hover:bg-[var(--color-wash-lime-light)]"
+              >
+                <p className="text-2xl font-bold tracking-tight">{f.label}</p>
+                <p className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent-2)]">
+                  {f.metric}
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--color-fg-muted)]">
+                  {f.body}
+                </p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
