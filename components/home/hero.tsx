@@ -91,24 +91,30 @@ export function Hero({ locale }: { locale: Locale }) {
           </div>
         </div>
 
-        {/* right: phone mockup */}
-        <div className="mp-fade-up mp-fade-up-delay-3 relative flex items-center justify-center md:justify-end">
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10"
-            style={{
-              background:
-                "radial-gradient(closest-side, rgba(176,214,67,0.25), transparent 70%)",
-              filter: "blur(40px)",
-              transform: "translate(10%, 10%)",
-            }}
-          />
-          <div
-            className="origin-center md:rotate-3"
-            style={{ transform: "translateY(0) rotate(2deg)" }}
-          >
-            <PhoneMockup scale={0.9} />
+        {/* right: phone mockup with caption */}
+        <div className="mp-fade-up mp-fade-up-delay-3 relative flex flex-col items-center md:items-end">
+          <div className="relative">
+            <div
+              aria-hidden
+              className="absolute inset-0 -z-10"
+              style={{
+                background:
+                  "radial-gradient(closest-side, rgba(176,214,67,0.25), transparent 70%)",
+                filter: "blur(40px)",
+                transform: "translate(10%, 10%)",
+              }}
+            />
+            <div
+              className="origin-center"
+              style={{ transform: "rotate(2deg)" }}
+            >
+              <PhoneMockup scale={0.9} />
+            </div>
           </div>
+          <p className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-[var(--color-fg-muted)]">
+            <span className="h-1 w-6 bg-[var(--color-accent)]" />
+            {t("phoneCaption")}
+          </p>
         </div>
       </div>
     </section>

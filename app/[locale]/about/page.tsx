@@ -79,7 +79,7 @@ function AboutContent() {
         </div>
       </section>
 
-      {/* Mission quote — huge typography on white */}
+      {/* Mission — big quote on white */}
       <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-white">
         <div
           className="hero-blob"
@@ -112,7 +112,7 @@ function AboutContent() {
         </div>
       </section>
 
-      {/* Vision */}
+      {/* Vision + focus strip */}
       <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-wash-lime)]">
         <div
           className="hero-blob -z-10"
@@ -136,55 +136,25 @@ function AboutContent() {
             {t("visionBody")}
           </p>
 
-          {/* Focus areas with metrics */}
-          <div className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-border)] md:grid-cols-2 lg:grid-cols-4">
-            {visionFocus.map((f) => (
-              <article
+          {/* Focus areas — horizontal strip, no card box */}
+          <div className="mt-20 grid gap-y-12 md:grid-cols-4 md:gap-x-10">
+            {visionFocus.map((f, i) => (
+              <div
                 key={f.label}
-                className="flex flex-col gap-3 bg-white p-7 transition hover:bg-[var(--color-wash-lime-light)]"
+                className={`flex flex-col gap-3 ${
+                  i > 0
+                    ? "md:border-l md:border-[var(--color-fg)]/10 md:pl-10"
+                    : ""
+                }`}
               >
-                <p className="text-2xl font-bold tracking-tight">{f.label}</p>
-                <p className="text-xs font-mono uppercase tracking-wider text-[var(--color-accent-2)]">
+                <span className="text-3xl font-bold tracking-tight md:text-[2rem]">
+                  {f.label}
+                </span>
+                <p className="text-[10px] font-mono uppercase tracking-[0.15em] text-[var(--color-accent-2)]">
                   {f.metric}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-fg-muted)]">
+                <p className="mt-1 text-sm leading-relaxed text-[var(--color-fg-muted)]">
                   {f.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Origin */}
-      <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-teal-light)]">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
-          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
-            {t("originHeading")}
-          </h2>
-          <p className="mt-8 max-w-[65ch] text-xl leading-relaxed md:text-[1.4rem] md:leading-[1.6]">
-            {t("originBody")}
-          </p>
-        </div>
-      </section>
-
-      {/* Principles */}
-      <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
-          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
-            {t("principlesHeading")}
-          </h2>
-          <div className="mt-12 grid gap-x-12 gap-y-12 md:grid-cols-2">
-            {principles.map((p, i) => (
-              <div key={p.title} className="flex flex-col gap-3 border-t border-[var(--color-border)] pt-7">
-                <span className="text-xs font-mono text-[var(--color-fg-muted)]">
-                  0{i + 1}
-                </span>
-                <h3 className="text-2xl font-semibold tracking-tight">
-                  {p.title}
-                </h3>
-                <p className="max-w-[55ch] text-base leading-relaxed text-[var(--color-fg-muted)]">
-                  {p.body}
                 </p>
               </div>
             ))}
@@ -192,7 +162,46 @@ function AboutContent() {
         </div>
       </section>
 
-      {/* How we work */}
+      {/* Origin */}
+      <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-teal-light)]">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+            {t("originHeading")}
+          </p>
+          <p className="mt-10 max-w-[65ch] text-xl leading-relaxed md:text-[1.4rem] md:leading-[1.6]">
+            {t("originBody")}
+          </p>
+        </div>
+      </section>
+
+      {/* Principles — numbered list, not cards */}
+      <section className="border-t border-[var(--color-border)] bg-white">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+            {t("principlesHeading")}
+          </p>
+          <ol className="mt-14 flex flex-col">
+            {principles.map((p, i) => (
+              <li
+                key={p.title}
+                className="grid gap-3 border-t border-[var(--color-border)] py-10 md:grid-cols-[auto_1fr_2.5fr] md:gap-12 md:py-14 last:border-b last:border-[var(--color-border)]"
+              >
+                <span className="font-mono text-sm text-[var(--color-fg-muted)] md:pt-2">
+                  0{i + 1}
+                </span>
+                <h3 className="text-2xl font-semibold tracking-tight md:text-[1.75rem]">
+                  {p.title}
+                </h3>
+                <p className="text-base leading-relaxed text-[var(--color-fg-muted)] md:max-w-[55ch] md:text-lg">
+                  {p.body}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* How we work — step cards (only card pattern in About, distinct) */}
       <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-wash-lime)]">
         <div
           className="hero-blob -z-10"
@@ -205,21 +214,20 @@ function AboutContent() {
               "radial-gradient(circle, rgba(105,165,164,0.18), transparent 70%)",
           }}
         />
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
-          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+        <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("approachHeading")}
-          </h2>
-          <p className="mt-6 max-w-[50ch] text-2xl font-medium leading-snug tracking-tight md:text-3xl">
+          </p>
+          <p className="mt-8 max-w-[50ch] text-2xl font-medium leading-snug tracking-tight md:text-3xl">
             {t("approachIntro")}
           </p>
-
           <div className="mt-14 grid gap-6 md:grid-cols-3 md:gap-8">
             {approach.map((s) => (
               <article
                 key={s.step}
                 className="rounded-2xl border border-[var(--color-border)] bg-white p-7 transition hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)]"
               >
-                <span className="text-xs font-mono text-[var(--color-accent-2)]">
+                <span className="font-mono text-xs text-[var(--color-accent-2)]">
                   {s.step}
                 </span>
                 <h3 className="mt-4 text-lg font-semibold tracking-tight">
@@ -234,25 +242,13 @@ function AboutContent() {
         </div>
       </section>
 
-      {/* What we don't make */}
-      <section className="border-t border-[var(--color-border)] bg-white">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
-          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
-            {t("antiHeading")}
-          </h2>
-          <p className="mt-8 max-w-[65ch] text-xl leading-relaxed md:text-[1.4rem] md:leading-[1.6]">
-            {t("antiBody")}
-          </p>
-        </div>
-      </section>
-
       {/* Studio facts */}
       <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-lime-light)]">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
-          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("factsHeading")}
-          </h2>
-          <dl className="mt-8 grid gap-x-12 gap-y-5 md:grid-cols-2">
+          </p>
+          <dl className="mt-10 grid gap-x-12 gap-y-5 md:grid-cols-2">
             <Fact label={t("facts.founded")} value={COMPANY.foundedAt} />
             <Fact label={t("facts.based")} value={t("facts.basedValue")} />
             <Fact

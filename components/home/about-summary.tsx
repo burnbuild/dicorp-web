@@ -15,9 +15,15 @@ export function AboutSummary({ locale }: { locale: Locale }) {
         </p>
         <Link
           href={`/${locale}/about`}
-          className="mp-fade-up mp-fade-up-delay-2 mt-10 inline-block border-b border-[var(--color-fg)] pb-0.5 text-sm font-medium transition hover:border-[var(--color-accent-2)] hover:text-[var(--color-accent-2)]"
+          className="group mp-fade-up mp-fade-up-delay-2 mt-12 inline-flex items-center gap-2 text-sm font-medium tracking-tight transition hover:text-[var(--color-accent-2)]"
         >
-          {t("cta")} →
+          {t("cta")}
+          <span
+            aria-hidden
+            className="transition-transform group-hover:translate-x-1"
+          >
+            →
+          </span>
         </Link>
       </div>
     </section>

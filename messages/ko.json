@@ -28,15 +28,16 @@
       "subline": "건강한 일상과 지속 가능한 목표를 돕는 앱을 만드는 독립 디지털 스튜디오입니다.",
       "cta": "프로젝트 보기",
       "secondaryCta": "연락하기",
-      "marker": "스튜디오 · 인천 송도"
+      "marker": "스튜디오 · 인천 송도",
+      "phoneCaption": "BurnBuild — 개발 중"
     },
     "glance": {
       "label": "한눈에 보는 스튜디오",
       "items": [
-        { "value": "2025", "label": "설립" },
-        { "value": "1", "label": "개발 중인 앱" },
-        { "value": "3년+", "label": "설계된 사용 수명" },
-        { "value": "0", "label": "다크 패턴" }
+        { "value": "2025", "label": "설립 · 인천 송도" },
+        { "value": "01", "label": "활발히 개발 중인 앱" },
+        { "value": "3년+", "label": "설계된 프로덕트 수명" },
+        { "value": "00", "label": "출시한 다크 패턴" }
       ]
     },
     "aboutSummary": {

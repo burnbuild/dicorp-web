@@ -28,15 +28,16 @@
       "subline": "An independent digital studio building thoughtful apps that help people stay healthy and finish what they start.",
       "cta": "See our work",
       "secondaryCta": "Get in touch",
-      "marker": "Studio · Songdo, Korea"
+      "marker": "Studio · Songdo, Korea",
+      "phoneCaption": "BurnBuild — currently in development"
     },
     "glance": {
       "label": "Studio at a glance",
       "items": [
-        { "value": "2025", "label": "Founded" },
-        { "value": "1", "label": "App in development" },
-        { "value": "3yr+", "label": "Designed lifespan" },
-        { "value": "0", "label": "Dark patterns" }
+        { "value": "2025", "label": "Founded · Songdo, Korea" },
+        { "value": "01", "label": "App in active development" },
+        { "value": "3y+", "label": "Designed product lifespan" },
+        { "value": "00", "label": "Dark patterns shipped" }
       ]
     },
     "aboutSummary": {

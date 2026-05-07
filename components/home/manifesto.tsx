@@ -27,7 +27,7 @@ export function Manifesto() {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1200px] px-6 py-28 md:px-8 md:py-40">
+      <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
         <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
           {t("label")}
         </p>

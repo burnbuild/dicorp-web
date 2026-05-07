@@ -78,35 +78,35 @@ function WorkContent() {
 
       {/* Approach */}
       <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-teal-light)]">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
-          <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("approachHeading")}
-          </h2>
-          <p className="mt-8 max-w-[65ch] text-xl leading-relaxed md:text-[1.4rem] md:leading-[1.6]">
+          </p>
+          <p className="mt-10 max-w-[65ch] text-xl leading-relaxed md:text-[1.4rem] md:leading-[1.6]">
             {t("approachBody")}
           </p>
         </div>
       </section>
 
-      {/* BurnBuild card with phone mockup */}
+      {/* BurnBuild — split layout (text + phone) */}
       <section className="relative overflow-hidden border-t border-[var(--color-border)] bg-[var(--color-wash-lime)]">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
           <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
-            <div className="rounded-3xl border border-[var(--color-border)] bg-white p-8 md:p-12">
+            <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-accent-2)] px-3 py-1 text-xs text-[var(--color-accent-2)]">
                 <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent-2)]" />
                 {t("burnbuild.status")}
               </span>
-              <h2 className="mt-6 text-[clamp(2.25rem,4.5vw,3.25rem)] font-bold tracking-tight">
+              <h2 className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-bold tracking-tight leading-none">
                 {t("burnbuild.name")}
               </h2>
-              <p className="mt-3 text-base text-[var(--color-fg-muted)]">
+              <p className="mt-4 text-lg text-[var(--color-fg-muted)]">
                 {t("burnbuild.tagline")}
               </p>
-              <p className="mt-8 max-w-[55ch] text-lg leading-relaxed">
+              <p className="mt-10 max-w-[55ch] text-lg leading-relaxed">
                 {t("burnbuild.description")}
               </p>
-              <p className="mt-8 text-xs uppercase tracking-wider text-[var(--color-fg-muted)]">
+              <p className="mt-10 font-mono text-xs uppercase tracking-[0.2em] text-[var(--color-fg-muted)]">
                 {t("burnbuild.platforms")}
               </p>
             </div>
@@ -127,29 +127,31 @@ function WorkContent() {
             </div>
           </div>
 
-          {/* Highlights */}
-          <div className="mt-20">
-            <h3 className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
+          {/* Highlights — horizontal strip, same pattern as Vision focus */}
+          <div className="mt-24 grid gap-y-12 border-t border-[var(--color-fg)]/10 pt-14 md:grid-cols-3 md:gap-x-10">
+            <p className="md:col-span-3 text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
               {t("burnbuild.highlightsHeading")}
-            </h3>
-            <div className="mt-10 grid gap-6 md:grid-cols-3 md:gap-8">
-              {highlights.map((h, i) => (
-                <article
-                  key={h.title}
-                  className="rounded-2xl border border-[var(--color-border)] bg-white p-7 transition hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(0,0,0,0.05)]"
-                >
-                  <span className="text-xs font-mono text-[var(--color-fg-muted)]">
-                    0{i + 1}
-                  </span>
-                  <h4 className="mt-4 text-lg font-semibold tracking-tight">
-                    {h.title}
-                  </h4>
-                  <p className="mt-3 text-sm leading-relaxed text-[var(--color-fg-muted)]">
-                    {h.body}
-                  </p>
-                </article>
-              ))}
-            </div>
+            </p>
+            {highlights.map((h, i) => (
+              <div
+                key={h.title}
+                className={`flex flex-col gap-3 ${
+                  i > 0
+                    ? "md:border-l md:border-[var(--color-fg)]/10 md:pl-10"
+                    : ""
+                }`}
+              >
+                <span className="font-mono text-xs text-[var(--color-fg-muted)]">
+                  0{i + 1}
+                </span>
+                <h3 className="text-lg font-semibold tracking-tight">
+                  {h.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-[var(--color-fg-muted)]">
+                  {h.body}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -168,22 +170,22 @@ function WorkContent() {
           }}
         />
         <div className="relative mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
-          <h2 className="max-w-[20ch] text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[1.08] tracking-tight">
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("againstGrainHeading")}
-          </h2>
-          <ul className="mt-14 grid gap-x-12 gap-y-10 md:grid-cols-2">
+          </p>
+          <ul className="mt-14 flex flex-col">
             {grain.map((row, i) => (
               <li
                 key={row.instead}
-                className="flex flex-col gap-3 border-t border-[var(--color-border)] pt-6"
+                className="grid gap-3 border-t border-[var(--color-border)] py-10 md:grid-cols-[auto_1fr_2fr] md:gap-12 md:py-14 last:border-b last:border-[var(--color-border)]"
               >
-                <span className="text-xs font-mono text-[var(--color-fg-muted)]">
+                <span className="font-mono text-sm text-[var(--color-fg-muted)] md:pt-2">
                   0{i + 1}
                 </span>
-                <p className="text-lg font-semibold tracking-tight">
+                <p className="text-xl font-semibold tracking-tight md:text-2xl">
                   {row.instead},
                 </p>
-                <p className="text-base leading-relaxed text-[var(--color-fg-muted)]">
+                <p className="text-base leading-relaxed text-[var(--color-fg-muted)] md:max-w-[55ch] md:text-lg">
                   {row.we}
                 </p>
               </li>
@@ -194,11 +196,11 @@ function WorkContent() {
 
       {/* Future slot */}
       <section className="border-t border-[var(--color-border)] bg-[var(--color-wash-lime-light)]">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-8 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 py-24 md:px-8 md:py-32">
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--color-fg-muted)]">
             {t("futureSlot.label")}
           </p>
-          <p className="mt-6 max-w-[60ch] text-lg leading-relaxed text-[var(--color-fg-muted)]">
+          <p className="mt-10 max-w-[60ch] text-xl leading-relaxed text-[var(--color-fg-muted)] md:text-[1.4rem] md:leading-[1.6]">
             {t("futureSlot.body")}
           </p>
         </div>
