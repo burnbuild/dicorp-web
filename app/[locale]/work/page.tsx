@@ -2,7 +2,6 @@ import { useTranslations, useMessages } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { PhoneMockup } from "@/components/phone-mockup";
-import { BigWordmark } from "@/components/big-wordmark";
 
 type Highlight = { title: string; body: string };
 type GrainPair = { instead: string; we: string };
@@ -204,8 +203,6 @@ function WorkContent() {
           </p>
         </div>
       </section>
-
-      <BigWordmark />
     </>
   );
 }

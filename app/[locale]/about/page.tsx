@@ -2,7 +2,6 @@ import { useTranslations, useMessages } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { COMPANY } from "@/lib/company";
-import { BigWordmark } from "@/components/big-wordmark";
 
 type Principle = { title: string; body: string };
 type Step = { step: string; title: string; body: string };
@@ -213,8 +212,6 @@ function AboutContent() {
           </dl>
         </div>
       </section>
-
-      <BigWordmark />
     </>
   );
 }

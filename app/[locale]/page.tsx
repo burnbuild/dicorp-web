@@ -7,7 +7,6 @@ import { Manifesto } from "@/components/home/manifesto";
 import { AntiPatterns } from "@/components/home/anti-patterns";
 import { WorkPreview } from "@/components/home/work-preview";
 import { ContactCta } from "@/components/home/contact-cta";
-import { BigWordmark } from "@/components/big-wordmark";
 import { routing, type Locale } from "@/i18n/routing";
 
 export default async function HomePage({
@@ -30,7 +29,6 @@ export default async function HomePage({
       <AntiPatterns />
       <WorkPreview locale={safeLocale} />
       <ContactCta />
-      <BigWordmark />
     </>
   );
 }
