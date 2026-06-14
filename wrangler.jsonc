@@ -7,11 +7,7 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  },
-  "services": [
-    {
-      "binding": "EMAIL_SENDER",
-      "service": "dicorp-email-sender"
-    }
-  ]
+  }
+  // Contact form posts directly to FormSubmit (formsubmit.co) from the client —
+  // no email worker / service binding needed.
 }

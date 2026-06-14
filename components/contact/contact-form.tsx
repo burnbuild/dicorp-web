@@ -17,13 +17,22 @@ export function ContactForm() {
     event.preventDefault();
     setStatus("sending");
     try {
-      const res = await fetch("/api/contact", {
+      // FormSubmit delivers straight to the inbox — no account/key/DNS.
+      const res = await fetch("https://formsubmit.co/ajax/manager@dicorporations.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message, locale }),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          locale,
+          _subject: `Contact form - ${name}`,
+          _template: "table",
+          _captcha: "false",
+        }),
       });
-      const data = (await res.json()) as { ok?: boolean; error?: string };
-      if (res.ok && data.ok) {
+      const data = (await res.json().catch(() => ({}))) as { success?: unknown };
+      if (res.ok && (data.success === true || data.success === "true")) {
         setStatus("success");
         setName("");
         setEmail("");
